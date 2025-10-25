@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  receptor1:
+    build: .
+    container_name: receptor1
+    ports:
+      - "12345:12345"
+    networks:
+      - receptor-network
+
+  receptor2:
+    build: .
+    container_name: receptor2
+    ports:
+      - "12346:12345"
+    networks:
+      - receptor-network
+
+  receptor3:
+    build: .
+    container_name: receptor3
+    ports:
+      - "12347:12345"
+    networks:
+      - receptor-network
+
+networks:
+  receptor-network:
+    driver: bridge
