@@ -1,0 +1,8 @@
+run = "javac Comum/*.java && javac -cp '.:Comum' Receptor/*.java && java -cp '.:Comum:Receptor' Receptor 12345"
+language = "java"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["sh", "-c", "javac Comum/*.java && javac -cp '.:Comum' Receptor/*.java && java -cp '.:Comum:Receptor' Receptor 12345"]
